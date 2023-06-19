@@ -17,6 +17,7 @@ package com.google.android.exoplayer2.demo;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Pair;
@@ -339,8 +340,10 @@ public class PlayerActivity extends AppCompatActivity
       return Collections.emptyList();
     }
 
-    List<MediaItem> mediaItems =
-        createMediaItems(intent, DemoUtil.getDownloadTracker(/* context= */ this));
+//    List<MediaItem> mediaItems =
+//        createMediaItems(intent, DemoUtil.getDownloadTracker(/* context= */ this));
+    List<MediaItem> mediaItems = new ArrayList<>();
+    mediaItems.add(MediaItem.fromUri("file:///storage/emulated/0/Dolby"));
     for (int i = 0; i < mediaItems.size(); i++) {
       MediaItem mediaItem = mediaItems.get(i);
 

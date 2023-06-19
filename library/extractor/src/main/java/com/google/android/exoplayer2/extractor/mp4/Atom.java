@@ -416,6 +416,8 @@ import java.util.List;
   @SuppressWarnings("ConstantCaseForConstants")
   public static final int TYPE_mdcv = 0x6d646376;
 
+  public static final int TYPE_vivid = 0x61763361;
+
   public final int type;
 
   public Atom(int type) {

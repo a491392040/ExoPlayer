@@ -449,6 +449,21 @@ public class DefaultRenderersFactory implements RenderersFactory {
             audioSink);
     out.add(audioRenderer);
 
+    try {
+      Class<?> clazz = Class.forName("com.caixun.vivid.VividRender");
+      Constructor<?> constructor = clazz.getConstructor();
+      Renderer renderer = (Renderer) constructor.newInstance();
+      out.add(renderer);
+      Log.i(TAG, "Loaded VividRender.");
+    } catch (ClassNotFoundException e) {
+      // Expected if the app was built without the extension.
+    } catch (Exception e) {
+      // The extension is present, but instantiation failed.
+      throw new RuntimeException("Error instantiating Vivid extension", e);
+    }
+
+
+
     if (extensionRendererMode == EXTENSION_RENDERER_MODE_OFF) {
       return;
     }
@@ -456,6 +471,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
     if (extensionRendererMode == EXTENSION_RENDERER_MODE_PREFER) {
       extensionRendererIndex--;
     }
+
 
     try {
       Class<?> clazz = Class.forName("com.google.android.exoplayer2.decoder.midi.MidiRenderer");
@@ -469,6 +485,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
       // The extension is present, but instantiation failed.
       throw new RuntimeException("Error instantiating MIDI extension", e);
     }
+
 
     try {
       // Full class names used for constructor args so the LINT rule triggers if any of them move.

@@ -983,7 +983,8 @@ import org.checkerframework.checker.nullness.compatqual.NullableType;
           || childAtomType == Atom.TYPE_alaw
           || childAtomType == Atom.TYPE_ulaw
           || childAtomType == Atom.TYPE_Opus
-          || childAtomType == Atom.TYPE_fLaC) {
+          || childAtomType == Atom.TYPE_fLaC
+          || childAtomType == Atom.TYPE_vivid) {
         parseAudioSampleEntry(
             stsd,
             childAtomType,
@@ -1488,6 +1489,8 @@ import org.checkerframework.checker.nullness.compatqual.NullableType;
       mimeType = MimeTypes.AUDIO_FLAC;
     } else if (atomType == Atom.TYPE_mlpa) {
       mimeType = MimeTypes.AUDIO_TRUEHD;
+    } else if(atomType == Atom.TYPE_vivid){
+      mimeType = MimeTypes.AUDIO_VIVID;
     }
 
     @Nullable List<byte[]> initializationData = null;

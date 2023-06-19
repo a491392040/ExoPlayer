@@ -28,6 +28,12 @@ android {
         minSdkVersion project.ext.minSdkVersion
         targetSdkVersion project.ext.appTargetSdkVersion
         multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+            stl "gnustl_static"
+        }
+
     }
 
     buildTypes {
@@ -66,6 +72,7 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':extension-vivid')
     compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
     implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
     implementation 'androidx.appcompat:appcompat:' + androidxAppCompatVersion
