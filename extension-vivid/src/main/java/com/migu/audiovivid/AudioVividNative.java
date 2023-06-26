@@ -1,4 +1,4 @@
-package com.migu.vivid;
+package com.migu.audiovivid;
 
 
 public class AudioVividNative {

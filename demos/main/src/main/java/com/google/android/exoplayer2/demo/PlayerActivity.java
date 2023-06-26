@@ -343,7 +343,7 @@ public class PlayerActivity extends AppCompatActivity
 //    List<MediaItem> mediaItems =
 //        createMediaItems(intent, DemoUtil.getDownloadTracker(/* context= */ this));
     List<MediaItem> mediaItems = new ArrayList<>();
-    mediaItems.add(MediaItem.fromUri("file:///storage/emulated/0/Dolby"));
+    mediaItems.add(MediaItem.fromUri("file:///storage/emulated/0/123.mp4"));
     for (int i = 0; i < mediaItems.size(); i++) {
       MediaItem mediaItem = mediaItems.get(i);
 

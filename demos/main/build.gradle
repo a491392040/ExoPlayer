@@ -92,6 +92,7 @@ dependencies {
     withDecoderExtensionsImplementation project(modulePrefix + 'extension-opus')
     withDecoderExtensionsImplementation project(modulePrefix + 'extension-vp9')
     withDecoderExtensionsImplementation project(modulePrefix + 'extension-rtmp')
+    implementation 'com.iqiyi.xcrash:xcrash-android-lib:2.4.9'
 }
 
 apply plugin: 'com.google.android.gms.strict-version-matcher-plugin'
